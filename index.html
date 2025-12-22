@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSync - Home</title>
+    <!--favicon-->
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <!--Css-->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <!--navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-weather fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <a class="navbar-brand" href="#">
+                    <img  class="navbar-logo" src="assets/img/logo-cloudsync.png">
+                </a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#detalles">Detalle clima</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">About</a>
+                    </li> 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--header-->
+    <header class="hero-weather text-white d-flex align-items-center" id="header">
+         <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-3">
+                        Consulta el clima en tiempo real
+                    </h1>
+                    <p class="lead fw-semibold mb-4 fs-5">
+                        Descubre el pronóstico actual y extendido de cualquier ciudad
+                        en segundos.
+                    </p>
+                    <form class="mt-4 d-flex gap-2">
+                        <input type="text" class="form-control form-control-lg" placeholder="Ingresa una ciudad"/>
+                        <button class="btn btn-primary btn-lg">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--section about us-->
+    <section id="about" class="py-5 about-body">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="assets/img/about-weather.png" alt="Visualización del clima" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">Hola, somos <span class="text-primary">CloudSync</span></h2>
+                    <p class="text-muted fs-5">
+                        En CloudSync transformamos datos meteorológicos en información clara y útil para tu día a día. 
+                        Analizamos el clima en tiempo real, combinando tecnología y precisión para ayudarte a planificar mejor tus actividades, 
+                        anticiparte a los cambios del tiempo y tomar decisiones informadas, estés donde estés.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--section detalle por clima local-->
+    <section class="py-5 bg-light section-localidades" id="detalles">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Clima en las principales ciudades de Chile</h2>
+                <p class="text-muted">
+                    Consulta el estado del tiempo actual y el pronóstico semanal de las localidades más importantes del país.
+                </p>
+            </div>
+            <div class="row g-4"> <!-- Cards por localidad-->
+                <div class="col-lg-4 col-md-6"> <!--card santiago-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/santiago.jpg" class="card-img-top" alt="Santiago de Chile">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Santiago</h5>
+                            <p class="mb-2">☁️ <strong>18°C</strong> · Nublado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-santiago">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-santiago">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 18°C</li>
+                                    <li class="list-group-item">💧 Humedad: 65%</li>
+                                    <li class="list-group-item">🌬️ Viento: 12 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☀️ 20°C</li>
+                                        <li>Mar: ☁️ 19°C</li>
+                                        <li>Mié: 🌧️ 16°C</li>
+                                        <li>Jue: ☁️ 18°C</li>
+                                        <li>Vie: ☀️ 21°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card iquique-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/iquique.jpg" class="card-img-top" alt="Iquique">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Iquique</h5>
+                            <p class="mb-2">☀️ <strong>24°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-iquique">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-iquique">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 24°C</li>
+                                    <li class="list-group-item">💧 Humedad: 68%</li>
+                                    <li class="list-group-item">🌬️ Viento: 18 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☀️ 25°C</li>
+                                        <li>Mar: ☀️ 24°C</li>
+                                        <li>Mié: ⛅ 23°C</li>
+                                        <li>Jue: ☀️ 24°C</li>
+                                        <li>Vie: ⛅ 22°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card antofagasta-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/antofagasta.jpg" class="card-img-top" alt="Antofagasta">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Antofagasta</h5>
+                            <p class="mb-2">☀️ <strong>24°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-antofagasta">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-antofagasta">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 24°C</li>
+                                    <li class="list-group-item">💧 Humedad: 40%</li>
+                                    <li class="list-group-item">🌬️ Viento: 18 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☀️ 23°C</li>
+                                        <li>Mar: ☀️ 24°C</li>
+                                        <li>Mié: ⛅ 22°C</li>
+                                        <li>Jue: ☀️ 23°C</li>
+                                        <li>Vie: ☀️ 25°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card calama-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/calama.jpg" class="card-img-top" alt="Calama">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Calama</h5>
+                            <p class="mb-2">☀️ <strong>26°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-calama">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-calama">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 26°C</li>
+                                    <li class="list-group-item">💧 Humedad: 20%</li>
+                                    <li class="list-group-item">🌬️ Viento: 15 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☀️ 27°C</li>
+                                        <li>Mar: ☀️ 28°C</li>
+                                        <li>Mié: ☀️ 26°C</li>
+                                        <li>Jue: ☀️ 29°C</li>
+                                        <li>Vie: ☀️ 32°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card La Serena-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/laSerena.jpg" class="card-img-top" alt="La Serena">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">La Serena</h5>
+                            <p class="mb-2">⛅ <strong>19°C</strong> · Parcialmente nublado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-laSerena">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-laSerena">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 19°C</li>
+                                    <li class="list-group-item">💧 Humedad: 68%</li>
+                                    <li class="list-group-item">🌬️ Viento: 14 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ⛅ 18°C</li>
+                                        <li>Mar: ☁️ 17°C</li>
+                                        <li>Mié: ⛅ 19°C</li>
+                                        <li>Jue: ☀️ 21°C</li>
+                                        <li>Vie: ⛅ 20°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card Viña del Mar-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/viñadelmar.jpg" class="card-img-top" alt="Viña del Mar">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Viña del Mar</h5>
+                            <p class="mb-2">⛅ <strong>18°C</strong> · Parcialmente nublado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-viñadelmar">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-viñadelmar">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 18°C</li>
+                                    <li class="list-group-item">💧 Humedad: 75%</li>
+                                    <li class="list-group-item">🌬️ Viento: 16 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☀️ 19°C</li>
+                                        <li>Mar: ☁️ 17°C</li>
+                                        <li>Mié: 🌦️ 16°C</li>
+                                        <li>Jue: ⛅ 18°C</li>
+                                        <li>Vie: ☀️ 20°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card Valparaiso-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/valparaiso.jpg" class="card-img-top" alt="Valparaiso">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Valparaíso</h5>
+                            <p class="mb-2">☁️ <strong>16°C</strong> · Nublado</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-valparaiso">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-valparaiso">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 16°C</li>
+                                    <li class="list-group-item">💧 Humedad: 78%</li>
+                                    <li class="list-group-item">🌬️ Viento: 18 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: ☁️ 16°C</li>
+                                        <li>Mar: ⛅ 17°C</li>
+                                        <li>Mié: 🌦️ 15°C</li>
+                                        <li>Jue: ☁️ 16°C</li>
+                                        <li>Vie: ⛅ 18°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card Concepcion-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/concepcion.jpg" class="card-img-top" alt="Concepcion">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Concepción</h5>
+                            <p class="mb-2">🌧️ <strong>14°C</strong> · Lluvioso</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-concepcion">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-concepcion">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 14°C</li>
+                                    <li class="list-group-item">💧 Humedad: 85%</li>
+                                    <li class="list-group-item">🌬️ Viento: 18 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: 🌧️ 13°C</li>
+                                        <li>Mar: ☁️ 15°C</li>
+                                        <li>Mié: 🌦️ 14°C</li>
+                                        <li>Jue: ☁️ 16°C</li>
+                                        <li>Vie: ⛅ 17°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card valdivia-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/valdivia.jpg" class="card-img-top" alt="Valdivia">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Valdivia</h5>
+                            <p class="mb-2">🌧️ <strong>14°C</strong> · Lluvioso</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-valdivia">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-valdivia">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 14°C</li>
+                                    <li class="list-group-item">💧 Humedad: 85%</li>
+                                    <li class="list-group-item">🌬️ Viento: 18 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: 🌧️ 13°C</li>
+                                        <li>Mar: ☁️ 15°C</li>
+                                        <li>Mié: 🌧️ 14°C</li>
+                                        <li>Jue: ⛈️ 9°C</li>
+                                        <li>Vie: ☁️ 21°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6"> <!--card Punta arenas-->
+                    <div class="card h-100 shadow-sm">
+                        <img src="assets/img/puntaarenas.jpg" class="card-img-top" alt="Punta Arenas">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Punta Arenas</h5>
+                            <p class="mb-2">🌬️ <strong>7°C</strong> · Ventoso</p>
+                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-puntaArenas">
+                                Detalle de localidad
+                            </button>
+                            <div class="collapse mt-3" id="detalle-puntaArenas">
+                                <ul class="list-group list-group-flush text-start small">
+                                    <li class="list-group-item">🌡️ Temperatura: 7°C</li>
+                                    <li class="list-group-item">💧 Humedad: 80%</li>
+                                    <li class="list-group-item">🌬️ Viento: 45 km/h</li>
+                                </ul>
+                                <div class="mt-2 text-start small">
+                                    <strong>Pronóstico semanal</strong>
+                                    <ul class="mt-1">
+                                        <li>Lun: 🌬️ 6°C</li>
+                                        <li>Mar: 🌧️ 5°C</li>
+                                        <li>Mié: ☁️ 7°C</li>
+                                        <li>Jue: 🌬️ 6°C</li>
+                                        <li>Vie: 🌧️ 5°C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer class="text-white pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4"> <!-- Columna 1: Marca --> 
+                    <img  class="mb-3" src="assets/img/logo-cloudsync.png" alt="cloudsync logo" style="max-width: 70px;">
+                    <p class="small text-white">Información climática precisa y actualizada para ayudarte a planificar tu día en cualquier lugar de Chile.</p>
+                </div>
+                <div class="col-md-4"> <!-- Columna 2: Navegación -->
+                    <h6 class="fw-semibold">Explorar</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#header" class="footer-link">Home</a></li>
+                        <li><a href="#about" class="footer-link">About us</a></li>
+                        <li><a href="#detalles" class="footer-link">Detalle Clima</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4"> <!-- Columna 3: Contacto / redes -->
+                    <h6 class="fw-semibold">Síguenos en nuestras redes</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="Instagram">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="Twitter / X">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="YouTube">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light my-4"> <!-- Línea inferior -->
+            <div class="text-center small text-white pb-3"> 
+                © 2025 CloudSync · Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="assets/js/codigo.js"></script> 
+</body>
+</html>
