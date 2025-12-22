@@ -50,10 +50,19 @@
                         Descubre el pronóstico actual y extendido de cualquier ciudad
                         en segundos.
                     </p>
-                    <form class="mt-4 d-flex gap-2">
-                        <input type="text" class="form-control form-control-lg" placeholder="Ingresa una ciudad"/>
-                        <button class="btn btn-primary btn-lg">Buscar</button>
-                    </form>
+                    <div class="container my-4">
+                        <div class="position-relative weather-search" style="max-width: 400px;">
+                            <div class="input-group">
+                                <input type="text" id="cityInput" class="form-control" placeholder="Buscar ciudad...">
+                                <button class="btn btn-primary rounded-end" id="searchBtn">Buscar</button>
+                            </div>
+                            <div id="weatherResult" class="weather-result d-none">
+                                <button class="close-btn" id="closeResult">X</button>
+                                <p id="weatherText"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -1,36 +1,115 @@
-function buscarClima() {
-  const city = document.getElementById("cityInput").value;
-  const apiKey = "29a7f1e89596eb44b2c21cd07df4fdcc";
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-    .then(res => res.json())
-    .then(data => {
-      const weather = data.weather[0].main;
-
-      updateBackground(weather);
-
-      document.getElementById("resultado").innerHTML = 
-      ` <h3>${data.name}</h3>
-        <p>Temp: ${data.main.temp}°C</p>
-        <p>Clima: ${weather}</p>
-      `;
-    });
-}
-function updateBackground(weather) {
-  const body = document.body;
-  body.className = ""; // limpiar clases previas
-
-  if (weather === "Clear") {
-    body.classList.add("clear-sky");
-  } else if (weather === "Clouds") {
-    body.classList.add("cloudy");
-  } else if (weather === "Rain" || weather === "Drizzle") {
-    body.classList.add("rainy");
-  } else if (weather === "Thunderstorm") {
-    body.classList.add("storm");
-  } else if (weather === "Snow") {
-    body.classList.add("snow");
-  } else {
-    body.classList.add("sunny");
+const weatherData = {
+  santiago: {
+    temp: "18°C",
+    humidity: "65%",
+    wind: "12 km/h"
+  },
+  iquique: {
+    temp: "24°C",
+    humidity: "68%",
+    wind: "18 km/h"
+  },
+  antofagasta: {
+    temp: "24°C",
+    humidity: "40%",
+    wind: "18 km/h"
+  },
+  calama: {
+    temp: "26°C",
+    humidity: "20%",
+    wind: "15 km/h"
+  },
+  la_serena: {
+    temp: "19°C",
+    humidity: "68%",
+    wind: "14 km/h"
+  },
+  vina_del_mar: {
+    temp: "18°C",
+    humidity: "75%",
+    wind: "16 km/h"
+  },
+  valparaiso: {
+    temp: "16°C",
+    humidity: "78%",
+    wind: "18 km/h"
+  },
+  concepcion: {
+    temp: "14°C",
+    humidity: "85%",
+    wind: "18 km/h"
+  },
+  valdivia: {
+    temp: "14°C",
+    humidity: "85%",
+    wind: "18 km/h"
+  },
+  punta_arenas: {
+    temp: "7°C",
+    humidity: "80%",
+    wind: "45 km/h"
   }
+ 
+};
+
+const input = document.getElementById("cityInput");
+const btn = document.getElementById("searchBtn");
+const result = document.getElementById("weatherResult");
+const text = document.getElementById("weatherText");
+const closeBtn = document.getElementById("closeResult");
+
+btn.addEventListener("click", showWeather);
+input.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") showWeather();
+});
+
+closeBtn.addEventListener("click", () => {
+  result.classList.add("d-none");
+});
+
+function normalizeCityName(city) {
+  return city
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "_");
 }
+function showWeather() {
+  const city = normalizeCityName(input.value.trim());
+
+  if (!weatherData[city]) {
+    result.classList.add("d-none");
+    return;
+  }
+  const data = weatherData[city];
+
+  text.innerHTML = `
+    <strong>${city.toUpperCase()}</strong><br>
+    🌡️ Temperatura: ${data.temp}<br>
+    💧 Humedad: ${data.humidity}<br>
+    💨 Viento: ${data.wind}
+  `;
+
+  result.classList.remove("d-none");
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
