@@ -93,6 +93,21 @@ function showWeather() {
   result.classList.remove("d-none");
 }
 
+/*despliegue del modal*/
+
+$(document).ready(function () {
+  $("#subscribeForm").on("submit", function (e) {
+    e.preventDefault(); 
+
+    const modal = new bootstrap.Modal(
+      document.getElementById("thanksModal")
+    );
+
+    modal.show();
+    this.reset();
+  });
+});
+
 
 
  
