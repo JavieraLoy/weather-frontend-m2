@@ -1,0 +1,33 @@
+@use '../utilities/variables' as v;
+
+.weather-search{
+  position: relative;
+  max-width: 400px;
+
+  &__result{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: v.$color-search-bg;
+    color: v.$color-white;
+    padding: v.$spacing-md;
+    margin-top: v.$spacing-xs;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    z-index: 10;
+  }
+  
+  &__close{
+    background: none;
+    border: none;
+    color: v.$color-white;
+    position: absolute;
+    top: v.$spacing-xs;
+    right: v.$spacing-sm;
+    font-size: v.$font-md;
+    cursor: pointer;
+  }
+}
+  
+

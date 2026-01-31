@@ -1,45 +1,76 @@
-.navbar-weather{
+.main-nav{
   background-color: rgba(47, 93, 140, 0.5);
 }
-.navbar-brand img {
+.main-nav__logo {
   max-height: 50px;
   width: auto;
 }
+.main-nav__link{
+  color: #fff;
+  margin-right: 1rem;
+}
+.main-nav__toggler{
+  border: none;
+}
 
-.hero-weather {
+.hero{
   min-height: 100vh;
   padding-top: 90px;
   display: flex;
   align-items: center;
+  color: #fff;
+}
+.hero--weather{
   background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.3)),
                     url("../img/weather-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
 }
+.hero__container{
+  width: 100%;
+}
+.hero__content{
+  max-width: 600px;
+}
+.hero__title{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero__subtitle{
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.weather-search{
+  position: relative;
+  max-width: 400px;
+}
+  
 
-.weather-result {
+.weather-search__result {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background: #406bce;
   color: white;
-  padding: 1rem;
+  padding: 16px;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 20px 40px rgba(0,0,0,.35);
   margin-top: 4px;
   z-index: 10;
 }
 
-.close-btn {
+.weather-search__close {
   background: none;
   border: none;
   color: white;
   position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 1.2rem;
+  top: 4px;
+  right: 8px;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 

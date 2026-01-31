@@ -15,54 +15,51 @@
 </head>
 <body>
     <!--navegacion-->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-weather fixed-top">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top main-nav">
+        <div class="container-fluid main-nav__container">
+            <button class="navbar-toggler main-nav__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <a class="navbar-brand" href="#">
-                    <img  class="navbar-logo" src="assets/img/logo-cloudsync.png">
+            <div class="collapse navbar-collapse main-nav__menu" id="navbarToggler">
+                <a class="navbar-brand main-nav__brand" href="#">
+                    <img  class="main-nav__logo" src="assets/img/logo-cloudsync.png" alt="CloudSync">
                 </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link  text-white active" aria-current="page" href="index.html">Home</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-nav__list">
+                    <li class="nav-item main-nav__item">
+                        <a class="nav-link active main-nav__link" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#detalles">Detalle clima</a>
+                    <li class="nav-item main-nav__item">
+                        <a class="nav-link  main-nav__link" href="#detalles">Detalle clima</a>
                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#about">About</a>
+                    <li class="nav-item main-nav__item">
+                        <a class="nav-link  main-nav__link" href="#about">About</a>
                     </li> 
                 </ul>
             </div>
         </div>
     </nav>
     <!--header-->
-    <header class="hero-weather text-white d-flex align-items-center" id="header">
-         <div class="container">
+    <header class="hero hero--weather" id="header">
+         <div class="container hero__container">
             <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-3">
+                <div class="col-lg-6 hero__content">
+                    <h1 class="hero__title">
                         Consulta el clima en tiempo real
                     </h1>
-                    <p class="lead fw-semibold mb-4 fs-5">
+                    <p class="hero__subtitle">
                         Descubre el pronóstico actual y extendido de cualquier ciudad
                         en segundos.
                     </p>
-                    <div class="container my-4">
-                        <div class="position-relative weather-search" style="max-width: 400px;">
-                            <div class="input-group">
-                                <input type="text" id="cityInput" class="form-control" placeholder="Buscar ciudad...">
-                                <button class="btn btn-primary rounded-end" id="searchBtn">Buscar</button>
-                            </div>
-                            <div id="weatherResult" class="weather-result d-none">
-                                <button class="close-btn" id="closeResult">X</button>
-                                <p id="weatherText"></p>
-                            </div>
+                    <div class="weather-search">
+                        <div class="weather-search__group input-group">
+                            <input type="text" id="cityInput" class="form-control weather-search__input" placeholder="Buscar ciudad...">
+                            <button class="btn btn-primary rounded-end weather-search__btn" id="searchBtn">Buscar</button>
                         </div>
-                    </div>
-                    
+                        <div id="weatherResult" class="weather-search__result d-none">
+                            <button class="weather-search__close" id="closeResult" aria-label="Cerrar resultado">X</button>
+                            <p id="weatherText" class="weather-search__text"></p>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>

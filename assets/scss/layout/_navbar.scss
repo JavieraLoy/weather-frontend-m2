@@ -1,0 +1,20 @@
+@use '../utilities/variables' as v;
+
+.main-nav{
+  background-color: v.$color-navbar-bg;
+
+  &__toggler{
+    border: none;
+  }
+  
+  &__logo {
+    max-height: 50px;
+    width: auto;
+  }
+  
+  &__link {
+    color: v.$color-white;
+    margin-right: 1rem;
+  }
+}
+
