@@ -1,0 +1,24 @@
+@use '../utilities/variables' as v;
+
+.about {
+  background-color: v.$color-about-bg;
+  padding: v.$spacing-xl 0;
+  
+  &__title{
+    font-size: v.$font-lg;
+    font-weight: 700;
+    margin-bottom: v.$spacing-md;
+ }
+
+ &__highlight{
+    color: v.$color-primary;
+ }
+
+ &__text{
+    font-size: v.$font-md;
+    color: v.$color-muted;
+    line-height: 1.6;
+ }
+} 
+
+

@@ -1,0 +1,19 @@
+@use '../utilities/variables' as v;
+
+.locations {
+  padding: v.$spacing-xl 0;
+
+  &__header{
+    margin-top: v.$spacing-xl;
+  }
+
+  &__title{
+    font-size: v.$font-lg;
+    font-weight: 700;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__subtitle{
+    color: v.$color-muted;
+  }
+}

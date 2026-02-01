@@ -65,15 +65,15 @@
         </div>
     </header>
     <!--section about us-->
-    <section id="about" class="py-5 about-body">
-        <div class="container">
+    <section id="about" class="about">
+        <div class="container about__container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="assets/img/about-weather.png" alt="Visualización del clima" class="img-fluid rounded shadow">
+                    <img src="assets/img/about-weather.png" alt="Visualización del clima" class="about__image img-fluid rounded shadow">
                 </div>
-                <div class="col-md-6">
-                    <h2 class="fw-bold mb-3">Hola, somos <span class="text-primary">CloudSync</span></h2>
-                    <p class="text-muted fs-5">
+                <div class="col-md-6 about__content">
+                    <h2 class="about__title">Hola, somos <span class="about__highlight">CloudSync</span></h2>
+                    <p class="about__text">
                         En CloudSync transformamos datos meteorológicos en información clara y útil para tu día a día. 
                         Analizamos el clima en tiempo real, combinando tecnología y precisión para ayudarte a planificar mejor tus actividades, 
                         anticiparte a los cambios del tiempo y tomar decisiones informadas, estés donde estés.
@@ -83,26 +83,26 @@
         </div>
     </section>
     <!--section detalle por clima local-->
-    <section class="py-5 bg-light section-localidades" id="detalles">
+    <section class="locations" id="detalles">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Clima en las principales ciudades de Chile</h2>
-                <p class="text-muted">
+            <div class="locations__header text-center">
+                <h2 class="locations__title">Clima en las principales ciudades de Chile</h2>
+                <p class="locations__subtitle">
                     Consulta el estado del tiempo actual y el pronóstico semanal de las localidades más importantes del país.
                 </p>
             </div>
-            <div class="row g-4"> <!-- Cards por localidad-->
+            <div class="row g-4 locations__grid"> <!-- Cards por localidad-->
                 <div class="col-lg-4 col-md-6"> <!--card santiago-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/santiago.jpg" class="card-img-top" alt="Santiago de Chile">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Santiago</h5>
-                            <p class="mb-2">☁️ <strong>18°C</strong> · Nublado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-santiago">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/santiago.jpg" class="weather-card__image" alt="Santiago de Chile">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Santiago</h5>
+                            <p class="weather-card__summary">☁️ <strong>18°C</strong> · Nublado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-santiago">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-santiago">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-santiago">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 18°C</li>
                                     <li class="list-group-item">💧 Humedad: 65%</li>
                                     <li class="list-group-item">🌬️ Viento: 12 km/h</li>
@@ -122,16 +122,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card iquique-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/iquique.jpg" class="card-img-top" alt="Iquique">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Iquique</h5>
-                            <p class="mb-2">☀️ <strong>24°C</strong> · Soleado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-iquique">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/iquique.jpg" class="weather-card__image" alt="Iquique">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Iquique</h5>
+                            <p class="weather-card__summary">☀️ <strong>24°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-iquique">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-iquique">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-iquique">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 24°C</li>
                                     <li class="list-group-item">💧 Humedad: 68%</li>
                                     <li class="list-group-item">🌬️ Viento: 18 km/h</li>
@@ -151,16 +151,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card antofagasta-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/antofagasta.jpg" class="card-img-top" alt="Antofagasta">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Antofagasta</h5>
-                            <p class="mb-2">☀️ <strong>24°C</strong> · Soleado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-antofagasta">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/antofagasta.jpg" class="weather-card__image" alt="Antofagasta">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Antofagasta</h5>
+                            <p class="weather-card__summary">☀️ <strong>24°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-antofagasta">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-antofagasta">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-antofagasta">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 24°C</li>
                                     <li class="list-group-item">💧 Humedad: 40%</li>
                                     <li class="list-group-item">🌬️ Viento: 18 km/h</li>
@@ -180,16 +180,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card calama-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/calama.jpg" class="card-img-top" alt="Calama">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Calama</h5>
-                            <p class="mb-2">☀️ <strong>26°C</strong> · Soleado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-calama">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/calama.jpg" class="weather-card__image" alt="Calama">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Calama</h5>
+                            <p class="weather-card__summary">☀️ <strong>26°C</strong> · Soleado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-calama">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-calama">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-calama">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 26°C</li>
                                     <li class="list-group-item">💧 Humedad: 20%</li>
                                     <li class="list-group-item">🌬️ Viento: 15 km/h</li>
@@ -209,16 +209,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card La Serena-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/laSerena.jpg" class="card-img-top" alt="La Serena">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">La Serena</h5>
-                            <p class="mb-2">⛅ <strong>19°C</strong> · Parcialmente nublado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-laSerena">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/laSerena.jpg" class="weather-card__image" alt="La Serena">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">La Serena</h5>
+                            <p class="weather-card__summary">⛅ <strong>19°C</strong> · Parcialmente nublado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-laSerena">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-laSerena">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-laSerena">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 19°C</li>
                                     <li class="list-group-item">💧 Humedad: 68%</li>
                                     <li class="list-group-item">🌬️ Viento: 14 km/h</li>
@@ -238,16 +238,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card Viña del Mar-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/viñadelmar.jpg" class="card-img-top" alt="Viña del Mar">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Viña del Mar</h5>
-                            <p class="mb-2">⛅ <strong>18°C</strong> · Parcialmente nublado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-viñadelmar">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/viñadelmar.jpg" class="weather-card__image" alt="Viña del Mar">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Viña del Mar</h5>
+                            <p class="weather-card__summary">⛅ <strong>18°C</strong> · Parcialmente nublado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-viñadelmar">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-viñadelmar">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-viñadelmar">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 18°C</li>
                                     <li class="list-group-item">💧 Humedad: 75%</li>
                                     <li class="list-group-item">🌬️ Viento: 16 km/h</li>
@@ -267,16 +267,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card Valparaiso-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/valparaiso.jpg" class="card-img-top" alt="Valparaiso">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Valparaíso</h5>
-                            <p class="mb-2">☁️ <strong>16°C</strong> · Nublado</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-valparaiso">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/valparaiso.jpg" class="weather-card__image" alt="Valparaiso">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Valparaíso</h5>
+                            <p class="weather-card__summary">☁️ <strong>16°C</strong> · Nublado</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-valparaiso">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-valparaiso">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-valparaiso">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 16°C</li>
                                     <li class="list-group-item">💧 Humedad: 78%</li>
                                     <li class="list-group-item">🌬️ Viento: 18 km/h</li>
@@ -296,16 +296,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card Concepcion-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/concepcion.jpg" class="card-img-top" alt="Concepcion">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Concepción</h5>
-                            <p class="mb-2">🌧️ <strong>14°C</strong> · Lluvioso</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-concepcion">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/concepcion.jpg" class="weather-card__image" alt="Concepcion">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Concepción</h5>
+                            <p class="weather-card__summary">🌧️ <strong>14°C</strong> · Lluvioso</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-concepcion">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-concepcion">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-concepcion">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 14°C</li>
                                     <li class="list-group-item">💧 Humedad: 85%</li>
                                     <li class="list-group-item">🌬️ Viento: 18 km/h</li>
@@ -325,16 +325,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card valdivia-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/valdivia.jpg" class="card-img-top" alt="Valdivia">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Valdivia</h5>
-                            <p class="mb-2">🌧️ <strong>14°C</strong> · Lluvioso</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-valdivia">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/valdivia.jpg" class="weather-card__image" alt="Valdivia">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Valdivia</h5>
+                            <p class="weather-card__summary">🌧️ <strong>14°C</strong> · Lluvioso</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-valdivia">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-valdivia">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-valdivia">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 14°C</li>
                                     <li class="list-group-item">💧 Humedad: 85%</li>
                                     <li class="list-group-item">🌬️ Viento: 18 km/h</li>
@@ -354,16 +354,16 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6"> <!--card Punta arenas-->
-                    <div class="card h-100 shadow-sm">
-                        <img src="assets/img/puntaarenas.jpg" class="card-img-top" alt="Punta Arenas">
-                        <div class="card-body text-center">
-                            <h5 class="card-title fw-bold">Punta Arenas</h5>
-                            <p class="mb-2">🌬️ <strong>7°C</strong> · Ventoso</p>
-                            <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse" data-bs-target="#detalle-puntaArenas">
+                    <div class="weather-card h-100">
+                        <img src="assets/img/puntaarenas.jpg" class="weather-card__image" alt="Punta Arenas">
+                        <div class="weather-card__body">
+                            <h5 class="weather-card__title">Punta Arenas</h5>
+                            <p class="weather-card__summary">🌬️ <strong>7°C</strong> · Ventoso</p>
+                            <button class="btn btn-outline-primary btn-sm weather-card__btn" data-bs-toggle="collapse" data-bs-target="#detalle-puntaArenas">
                                 Detalle de localidad
                             </button>
-                            <div class="collapse mt-3" id="detalle-puntaArenas">
-                                <ul class="list-group list-group-flush text-start small">
+                            <div class="collapse weather-card__details" id="detalle-puntaArenas">
+                                <ul class="list-group list-group-flush text-start small weather-card__list">
                                     <li class="list-group-item">🌡️ Temperatura: 7°C</li>
                                     <li class="list-group-item">💧 Humedad: 80%</li>
                                     <li class="list-group-item">🌬️ Viento: 45 km/h</li>
