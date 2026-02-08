@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as v;
+
+.thanks-modal {
+  &__content {
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: v.$color-white;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__button {
+    margin-top: v.$spacing-md;
+  }
+}

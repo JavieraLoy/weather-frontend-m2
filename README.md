@@ -1,6 +1,8 @@
 🌦️ CloudSync – Weather App
 
-CloudSync es una aplicación web informativa del clima que permite consultar el estado meteorológico de distintas ciudades de Chile de forma clara, visual y amigable. El proyecto está desarrollado como un MVP (Minimun Viable Product) enfocado en la práctica de Bootstrap 5, JavaScript y diseño responsive, integrando componentes modernos y una experiencia de usuario intuitiva. 
+CloudSync es una aplicación web informativa del clima que permite consultar el estado meteorológico de distintas ciudades de Chile de forma clara, visual y amigable.
+Este proyecto fue refactorizado para mejorar su escalabilidad, mantenibilidad y arquitectura CSS, incorporando SASS con partials y la metodología BEM para gestionar los estilos personalizados, manteniendo Bootstrap 5 como framework base, el cual proporciona un sistema de grid robusto y responsive. 
+El proyecto está desarrollado como un MVP (Minimun Viable Product) enfocado en buenas prácticas de frontend moderno.
 
 🚀 Características principales:
 
@@ -12,39 +14,68 @@ Viento 🌬️
 Estado del clima (soleado, nublado, lluvioso, etc.)
 🔍 Barra de búsqueda para consultar el clima por ciudad.
 🧩 Cards dinámicas con detalles desplegables.
-📱 Diseño responsive para desktop y mobile.
-🎨 Interfaz moderna con una identidad visual limpia y coherente.
+📱 Diseño responsive (mobile-first).
+🎨 Interfaz moderna con una identidad visual coherente.
 ✉️ Sección de contacto con formulario de suscripción.
+🧱 Arquitectura CSS modular con SASS + BEM.
 
 🛠️ Tecnologías utilizadas:
 
 HTML5 - Estructura semántica.
-CSS3 - Estilos personalizados.
-Bootstrap 5 - Layout responsive y componentes.
+SASS (SCSS)- Preprocesador CSS con partials y arquitectura modular.
+Metodología BEM- Organización de clases escalables.
+Bootstrap 5 - Grid system, utilidades y componentes base.
 JavaScript (ES6) -Lógica de datos climáticos.
-jQuery - interacciones simples (modal)
-Git & GitHub - control de versiones.
+jQuery - Interacciones simples (modal)
+Git & GitHub - Control de versiones.
+
 
 📁Estructura del Proyecto:
 
-MVP-CLIMA/
+MVPCLIMA/
 │
 ├── index.html
 │
 ├── assets/
 │   ├── css/
-│   │   └── styles.css
+│   │   ├── main.css
+|   |   └── main.css.map
 │   │
 │   ├── icons/
 │   │   └── favicon.ico
 │   │
 │   ├── img/
-│   │   └── (imagenes del proyecto)
+│   │   └── (imágenes del proyecto)
 │   │
-│   └── js/
-│       └── codigo.js
+│   ├── js/
+│   │   └── codigo.js
+│   │
+│   └── scss/
+│       ├── abstracts/
+│       │   ├── _mixins.scss
+│       │   └── _variables.scss
+│       │
+│       ├── base/
+│       │   ├── _reset.scss
+│       │   └── _typography.scss
+│       │
+|       ├── components/
+│       │   ├── _modal.scss
+│       │   ├── _weather-card.scss
+│       │   └── _weather-search.scss
+|       |
+│       ├── layout/
+│       │   ├── _navbar.scss
+│       │   ├── _hero.scss
+│       │   ├── _about.scss
+│       │   ├── _location.scss
+│       │   ├── _contact.scss
+│       │   └── _footer.scss
+│       │
+│       └── main.scss
 │
-└── README.md  
+└── README.md
+
 
 ⚙️Instalación y Uso:
 
@@ -54,9 +85,13 @@ git clone https://github.com/JavieraLoy/weather-frontend-m2.git
 
 2-Ingresa al proyecto:
 
-cd MVP-CLIMA
+cd MVPCLIMA
 
-3-Abre el archivo index.html en tu navegador.
+3-Cambiar a la rama de refactorización:
+
+git checkout update-proyecto
+
+4-Abre el archivo index.html en tu navegador.
 
 🧠 Funcionamiento del clima:
 
@@ -65,4 +100,4 @@ La arquitectura está preparada para una futura integración con una API real de
 
 👩‍💻 Autor
 Desarrollado por JavieraLoy 
-Proyecto de práctica y aprendizaje en desarrollo web frontend.
+Proyecto de práctica y aprendizaje en desarrollo web frontend con enfoque en arquitectura CSS moderna.

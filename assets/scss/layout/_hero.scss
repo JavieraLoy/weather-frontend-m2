@@ -1,4 +1,4 @@
-@use '../utilities/variables' as v;
+@use '../abstracts/variables' as v;
 
 .hero{
   min-height: 100vh;
@@ -8,8 +8,11 @@
   color: v.$color-white;
 
   &--weather{
-    background-image: linear-gradient(rgba(v.$overlay-dark, 0.3), rgba(v.$overlay-dark, 0.3)),
-                      url("../img/weather-hero.jpg");
+    background-image: linear-gradient(
+      rgba(v.$overlay-dark, 0.3), 
+      rgba(v.$overlay-dark, 0.3)
+      ),
+      url("../img/weather-hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

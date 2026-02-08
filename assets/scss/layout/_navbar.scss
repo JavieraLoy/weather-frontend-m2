@@ -1,4 +1,4 @@
-@use '../utilities/variables' as v;
+@use '../abstracts/variables' as v;
 
 .main-nav{
   background-color: v.$color-navbar-bg;

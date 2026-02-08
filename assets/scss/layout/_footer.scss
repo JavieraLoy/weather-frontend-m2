@@ -1,0 +1,52 @@
+@use 'sass:color';
+@use '../abstracts/variables' as v;
+
+.site-footer {
+  background-color: rgba(56, 85, 116, 0.5);
+
+  &__logo {
+    max-width: 70px;
+  }
+
+  &__description {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &__title {
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__list {
+    padding: 0;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+
+    &:hover {
+      color: v.$color-primary;
+    }
+  }
+
+  &__icons {
+    margin-top: v.$spacing-sm;
+  }
+
+  &__icon {
+    color: v.$color-primary;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: color.adjust(v.$color-primary, $lightness: 10%);
+    }
+  }
+
+  &__divider {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &__copy {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

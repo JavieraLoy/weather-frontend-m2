@@ -1,4 +1,4 @@
-@use '../utilities/variables' as v;
+@use '../abstracts/variables' as v;
 
 .locations {
   padding: v.$spacing-xl 0;

@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+
+.contact {
+  background-color: v.$color-bg-light;
+  padding: v.$spacing-xxl 0; 
+
+  &__box {
+    background-color: v.$color-white;
+    padding: v.$spacing-xl;
+    border-radius: 1.25rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: v.$font-lg;
+  }
+
+  &__description {
+    font-size: v.$font-md;
+  }
+
+  &__form {
+    margin-top: v.$spacing-lg;
+  }
+
+  &__button {
+    font-weight: 600;
+  }
+}

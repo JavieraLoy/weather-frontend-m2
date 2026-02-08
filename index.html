@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
     <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <!--Css-->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     
 </head>
 <body>
@@ -386,22 +386,22 @@
         </div>
     </section>
     <!--section contacto-->
-    <section class="contact-section py-5">
+    <section class="contact">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="contact-box text-center">
-                        <h2 class="mb-3">Suscríbete y recibe la mejor información del tiempo de tu ciudad</h2>
-                        <p class="mb-4 text-muted">Mantente informado con pronósticos actualizados y alertas climáticas.</p>
-                        <form id="subscribeForm" class="row justify-content-center g-2">
+                <div class="col-lg-8">
+                    <div class="contact__box text-center">
+                        <h2 class="contact__title mb-3">Suscríbete y recibe la mejor información del tiempo de tu ciudad</h2>
+                        <p class="contact__description mb-4 text-muted">Mantente informado con pronósticos actualizados y alertas climáticas.</p>
+                        <form id="subscribeForm" class="contact__form row justify-content-center g-2">
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Tu nombre" required>
+                                <input type="text" class="contact__input form-control" placeholder="Tu nombre" required>
                             </div>
                             <div class="col-md-4">
-                                <input type="email" class="form-control" placeholder="Tu email" required>
+                                <input type="email" class="contact__input form-control" placeholder="Tu email" required>
                             </div>
                             <div class="col-md-2">
-                               <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                               <button type="submit" class="contact__button btn btn-primary w-100">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -410,50 +410,50 @@
         </div>
     </section>
     <!--Modal-->
-    <div class="modal fade" id="thanksModal" tabindex="-1">
+    <div class="modal fade thanks-modal" id="thanksModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center">
-                <div class="modal-body">
-                    <h4>☀️ ¡Gracias por tu suscripción!</h4>
-                    <p class="text-muted">Pronto recibirás información del clima de tu ciudad.</p>
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <div class="modal-content thanks-modal__content text-center">
+                <div class="modal-body thanks-modal__body">
+                    <h4 class="thanks-modal__title">☀️ ¡Gracias por tu suscripción!</h4>
+                    <p class="thanks-modal__text">Pronto recibirás información del clima de tu ciudad.</p>
+                    <button class="btn btn-secondary thanks-modal__button" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
     <!--footer-->
-    <footer class="text-white pt-5">
+    <footer class="site-footer text-white pt-5">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4"> <!-- Columna 1: Marca --> 
-                    <img  class="mb-3" src="assets/img/logo-cloudsync.png" alt="cloudsync logo" style="max-width: 70px;">
-                    <p class="small text-white">Información climática precisa y actualizada para ayudarte a planificar tu día en cualquier lugar de Chile.</p>
+                <div class="col-md-4 site-footer__brand"> <!-- Columna 1: Marca --> 
+                    <img  class="site-footer__logo mb-3" src="assets/img/logo-cloudsync.png" alt="cloudsync logo">
+                    <p class="site-footer__description small">Información climática precisa y actualizada para ayudarte a planificar tu día en cualquier lugar de Chile.</p>
                 </div>
-                <div class="col-md-4"> <!-- Columna 2: Navegación -->
-                    <h6 class="fw-semibold">Explorar</h6>
-                    <ul class="list-unstyled">
-                        <li><a href="#header" class="footer-link">Home</a></li>
-                        <li><a href="#about" class="footer-link">About us</a></li>
-                        <li><a href="#detalles" class="footer-link">Detalle Clima</a></li>
+                <div class="col-md-4 site-footer__nav"> <!-- Columna 2: Navegación -->
+                    <h6 class="site-footer__title fw-semibold">Explorar</h6>
+                    <ul class="site-footer__list list-unstyled">
+                        <li><a href="#header" class="site-footer__link">Home</a></li>
+                        <li><a href="#about" class="site-footer__link">About us</a></li>
+                        <li><a href="#detalles" class="site-footer__link">Detalle Clima</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4"> <!-- Columna 3: Contacto / redes -->
-                    <h6 class="fw-semibold">Síguenos en nuestras redes</h6>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="Instagram">
+                <div class="col-md-4 site-footer__social"> <!-- Columna 3: Contacto / redes -->
+                    <h6 class="site-footer__title fw-semibold">Síguenos en nuestras redes</h6>
+                    <div class="site-footer__icons d-flex gap-3">
+                        <a href="#" class="site-footer__icon" data-toggle="tooltip" title="Instagram">
                             <i class="fab fa-instagram fa-lg"></i>
                         </a>
-                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="Twitter / X">
+                        <a href="#" class="site-footer__icon"  data-toggle="tooltip" title="Twitter / X">
                             <i class="fab fa-twitter fa-lg"></i>
                         </a>
-                        <a href="#" class="text-primary mx-3" data-toggle="tooltip" title="YouTube">
+                        <a href="#" class="site-footer__icon"  data-toggle="tooltip" title="YouTube">
                             <i class="fab fa-youtube fa-lg"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <hr class="border-light my-4"> <!-- Línea inferior -->
-            <div class="text-center small text-white pb-3"> 
+            <hr class="site-footer__divider my-4"> <!-- Línea inferior -->
+            <div class="site-footer__copy text-center small pb-3"> 
                 © 2025 CloudSync · Todos los derechos reservados
             </div>
         </div>

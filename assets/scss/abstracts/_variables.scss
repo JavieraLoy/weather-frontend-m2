@@ -1,10 +1,11 @@
 //variables de colores
 $color-navbar-bg: rgba(47, 93, 140, 0.5);
 $color-white: #fff;
-$overlay-dark: 15, 23, 42;
+$overlay-dark: #0f172a;
 $color-primary: #406bce;
 $color-muted:#6c757d;
 $color-about-bg: rgba(155, 191, 230, 0.5);
+$color-bg-light: #f8f9fa;
 
 //variables de tipografía
 $font-xxl: 3rem; //titulos
@@ -12,6 +13,7 @@ $font-lg: 2rem;
 $font-md: 1.1rem; //texto normal
 
 //espaciados
+$spacing-xxl: 96px;
 $spacing-xl: 48px;
 $spacing-lg: 24px;
 $spacing-md: 16px;

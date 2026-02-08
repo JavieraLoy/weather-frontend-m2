@@ -1,0 +1,240 @@
+/*========= Abstracts ========= */
+/*=========  Base ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+/*=========  Layout ========= */
+.main-nav {
+  background-color: rgba(47, 93, 140, 0.5);
+}
+.main-nav__toggler {
+  border: none;
+}
+.main-nav__logo {
+  max-height: 50px;
+  width: auto;
+}
+.main-nav__link {
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.hero {
+  min-height: 100vh;
+  padding-top: 90px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.hero--weather {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.3)), url("../img/weather-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__container {
+  width: 100%;
+}
+.hero__content {
+  max-width: 600px;
+}
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero__subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.about {
+  background-color: rgba(155, 191, 230, 0.5);
+  padding: 48px 0;
+}
+.about__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.about__highlight {
+  color: #406bce;
+}
+.about__text {
+  font-size: 1.1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.locations {
+  padding: 48px 0;
+}
+.locations__header {
+  margin-top: 48px;
+}
+.locations__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.locations__subtitle {
+  color: #6c757d;
+}
+
+.contact {
+  background-color: #f8f9fa;
+  padding: 96px 0;
+}
+.contact__box {
+  background-color: #fff;
+  padding: 48px;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contact__title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.contact__description {
+  font-size: 1.1rem;
+}
+.contact__form {
+  margin-top: 24px;
+}
+.contact__button {
+  font-weight: 600;
+}
+
+.site-footer {
+  background-color: rgba(56, 85, 116, 0.5);
+}
+.site-footer__logo {
+  max-width: 70px;
+}
+.site-footer__description {
+  color: rgba(255, 255, 255, 0.85);
+}
+.site-footer__title {
+  margin-bottom: 8px;
+}
+.site-footer__list {
+  padding: 0;
+}
+.site-footer__link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+.site-footer__link:hover {
+  color: #406bce;
+}
+.site-footer__icons {
+  margin-top: 8px;
+}
+.site-footer__icon {
+  color: #406bce;
+  transition: color 0.2s ease;
+}
+.site-footer__icon:hover {
+  color: rgb(104.5875, 138.45, 216.4125);
+}
+.site-footer__divider {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.site-footer__copy {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*=========  Components ========= */
+.thanks-modal__content {
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+}
+.thanks-modal__title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.thanks-modal__text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.thanks-modal__button {
+  margin-top: 16px;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.weather-card__image {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.weather-card__body {
+  padding: 16px;
+  text-align: center;
+}
+.weather-card__title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.weather-card__summary {
+  margin-bottom: 8px;
+}
+.weather-card__details {
+  margin-top: 8px;
+  text-align: left;
+}
+
+.weather-search {
+  position: relative;
+  max-width: 400px;
+}
+.weather-search__result {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #406bce;
+  color: #fff;
+  padding: 16px;
+  margin-top: 4px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+.weather-search__close {
+  background: none;
+  border: none;
+  color: #fff;
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */
