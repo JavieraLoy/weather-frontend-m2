@@ -3,14 +3,10 @@ import { locationData } from "../data/mockWeather.js";
 export function obtenerClima(busqueda) {
     if(!busqueda) return null;
 
-    const texto= busqueda.toString().toLowerCase().trim();
-
-    const resultado = locationData.find(
-        l => l.name.toLowerCase() === texto ||
-        l.id.toLowerCase() === texto
+    return locationData.find(
+        l => l.name.toLowerCase() === busqueda.toLowerCase() ||
+        l.id === busqueda
     );
-    return resultado ?? null;
-
 }
 
 //función para analizar el pronostico
