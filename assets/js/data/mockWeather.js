@@ -1,11 +1,12 @@
 export const locationData = [
     {
-        id:"detalle-santiago",
+        id:"santiago",
         name:"Santiago",
         temp: 18,
         humidity: 65,
         wind: 12,
         estadoActual: "Nublado",
+        imagen: "/assets/img/santiago.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 17, max: 20, estado: "Soleado"},
             { dia: "Martes", min: 13, max: 19, estado: "Nublado"},
@@ -17,12 +18,13 @@ export const locationData = [
         ]
     },
     {
-        id: "detalle-iquique",
+        id: "iquique",
         name: "Iquique",
         temp: 24,
         humidity: 68,
         wind: 18,
         estadoActual: "Soleado",
+        imagen: "/assets/img/iquique.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 21, max: 28, estado: "Soleado"},
             { dia: "Martes", min: 19, max: 26, estado: "Soleado"},
@@ -34,12 +36,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-antofagasta",
+        id:"antofagasta",
         name:"Antofagasta",
         temp: 24,
         humidity: 40,
         wind: 18,
         estadoActual: "Soleado",
+        imagen: "/assets/img/antofagasta.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 18, max: 24, estado: "Soleado"},
             { dia: "Martes", min: 17, max: 25, estado: "Soleado"},
@@ -51,12 +54,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-calama",
+        id:"calama",
         name:"Calama",
         temp: 26,
         humidity: 20,
         wind: 15,
         estadoActual: "Soleado",
+        imagen: "/assets/img/calama.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 19, max: 29, estado: "Soleado"},
             { dia: "Martes", min: 20, max: 30, estado: "Soleado"},
@@ -68,12 +72,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-la-serena",
+        id:"la-serena",
         name:"La Serena",
         temp: 19,
         humidity: 68,
         wind: 14,
         estadoActual: "Parcialmente Nublado",
+        imagen: "/assets/img/laSerena.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 14, max: 20, estado: "Parcialmente Nublado"},
             { dia: "Martes", min: 15, max: 18, estado: "Nublado"},
@@ -85,12 +90,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-viña-del-mar",
+        id:"viña-del-mar",
         name:"Viña Del Mar",
         temp: 18,
         humidity: 75,
         wind: 16,
         estadoActual: "Parcialmente Nublado",
+        imagen: "/assets/img/viñadelmar.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 14, max: 20, estado: "Soleado"},
             { dia: "Martes", min: 13, max: 19, estado: "Nublado"},
@@ -102,12 +108,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-valparaiso",
+        id:"valparaiso",
         name: "Valparaíso",
         temp: 16,
         humidity: 78,
         wind: 18,
         estadoActual: "Nublado",
+        imagen: "/assets/img/valparaiso.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 11, max: 16, estado: "Nublado"},
             { dia: "Martes", min: 15, max: 21, estado: "Parcialmente Nublado"},
@@ -119,12 +126,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-concepcion",
+        id:"concepcion",
         name: "Concepción",
         temp: 14,
         humidity: 85,
         wind: 18,
         estadoActual: "Lluvioso",
+        imagen: "/assets/img/concepcion.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 9, max: 15, estado: "Lluvioso"},
             { dia: "Martes", min: 14, max: 18, estado: "Nublado"},
@@ -136,12 +144,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-valdivia",
+        id:"valdivia",
         name: "Valdivia",
         temp: 14,
         humidity: 85,
         wind: 18,
         estadoActual: "Lluvioso",
+        imagen: "/assets/img/valdivia.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 11, max: 16, estado: "Lluvioso"},
             { dia: "Martes", min: 10, max: 17, estado: "Nublado"},
@@ -153,12 +162,13 @@ export const locationData = [
         ]
     },
     {
-        id:"detalle-punta-arenas",
+        id:"punta-arenas",
         name: "Punta Arenas",
         temp: 7,
         humidity: 80,
         wind: 45,
         estadoActual: "Ventoso",
+        imagen: "/assets/img/puntaarenas.jpg",
         pronosticoSemanal: [
             { dia: "Lunes", min: 4, max: 10, estado: "Ventoso"},
             { dia: "Martes", min: 3, max: 9, estado: "Lluvioso"},

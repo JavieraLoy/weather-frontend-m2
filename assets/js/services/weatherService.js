@@ -3,12 +3,14 @@ import { locationData } from "../data/mockWeather.js";
 export function obtenerClima(busqueda) {
     if(!busqueda) return null;
 
-    const texto= busqueda.toString().toLowerCase();
+    const texto= busqueda.toString().toLowerCase().trim();
 
-    return locationData.find(
+    const resultado = locationData.find(
         l => l.name.toLowerCase() === texto ||
         l.id.toLowerCase() === texto
-    ) || null;
+    );
+    return resultado ?? null;
+
 }
 
 //función para analizar el pronostico
@@ -74,4 +76,32 @@ export function analizarPronostico(pronosticoSemanal){
         diasOtros,
         resumen
     };
+}
+// función para obtenr el icono con el clima actual.
+export function obtenerIconoActual(estado) {
+    if (estado === "Soleado") return "☀️";
+    else if (estado === "Nublado") return "☁️";
+    else if (estado === "Parcialmente Nublado")return "⛅";
+    else if (estado === "Lluvioso") return "🌧️";
+    else if (estado === "Chubascos") return "🌦️";
+    else if (estado === "Ventoso") return "🌬️";
+    else if (estado === "Tormenta Electrica") return "⛈️";
+    else return "🌡️";
+}
+
+const iconosClima= {
+    "Soleado": "☀️",
+    "Nublado": "☁️",
+    "Parcialmente Nublado": "⛅",
+    "Lluvioso": "🌧️",
+    "Chubascos": "🌦️",
+    "Tormenta Electrica": "⛈️",
+    "Ventoso": "🌬️"
+};
+//función para detallar el pronostico por día de la semana.
+export function renderPronostico(pronostico){
+    return pronostico.map(dia => {
+        const icono= iconosClima[dia.estado] || "🌡️";
+        return `<li>${dia.dia}: ${icono} ${dia.max}°C</li>`;
+    }).join("");
 }
