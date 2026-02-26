@@ -6,7 +6,7 @@ import { adaptarPronostico } from "../services/weatherAdapter.js";
 
 export class WeatherApp {
   constructor() {
-    this.ciudadesIniciales = ["Santiago", "Valparaiso", "Concepcion"];
+    this.ciudadesIniciales = ["Santiago", "Antofagasta","Valparaiso", "Concepcion","Valdivia"];
     this.ciudadesCargadas= new Set();
     this.resultadoBox = document.getElementById("weatherResult");
     this.resultadoTexto = document.getElementById("weatherText");
@@ -21,11 +21,11 @@ export class WeatherApp {
 
   async iniciar() {
     await Promise.all(
-        this.ciudadesIniciales.map(ciudad => this.cargarCiudad(ciudad))
+        this.ciudadesIniciales.map(ciudad => this.cargarCiudad(ciudad,false))
     );
   }
 
-  async cargarCiudad(nombreCiudad) {
+  async cargarCiudad(nombreCiudad, mostrarPanel=false) {
     try {
       const climaActual = await obtenerClimaActual(nombreCiudad);
       const pronosticoApi= await obtenerPronostico(nombreCiudad);
@@ -41,7 +41,9 @@ export class WeatherApp {
         renderCard(datosProcesados, stats, alertas,pronosticoAdaptado);
         this.ciudadesCargadas.add(datosProcesados.name);
       }
-      this.mostrarResultado(datosProcesados);     
+      if(mostrarPanel){
+        this.mostrarResultado(datosProcesados); 
+      }  
 
     } catch (error) {
       console.error("Error cargando ciudad:", error.message);
@@ -51,8 +53,9 @@ export class WeatherApp {
       }
     }
   }
-
+  
   procesarDatos(data) {
+    const iconCode= data.weather[0].icon;
     return {
       name: data.name,
       temp: Math.round(data.main.temp),
@@ -60,22 +63,28 @@ export class WeatherApp {
       viento: Math.round(data.wind.speed * 3.6),
       estado: data.weather[0].description,
       estadoPrincipal: data.weather[0].main,
-      icono: data.weather[0].icon
+      icono: iconCode,
+      iconUrl:`https://openweathermap.org/img/wn/${iconCode}@2x.png`
     };
   }
 
   mostrarResultado(ciudad) {
-  if (!this.resultadoTexto || !this.resultadoBox) return;
+   if (!this.resultadoTexto || !this.resultadoBox) return;
 
-  const html = `
-    <strong>${ciudad.name}</strong><br>
-    ${ciudad.icono} ${ciudad.temp}°C - ${ciudad.estado}<br>
-    💧 Humedad: ${ciudad.humedad}%<br>
-    🌬️ Viento: ${ciudad.viento} km/h
-  `;
-
+   const html = `
+    <div class="d-flex align-item-center gap-3">
+      <img src="${ciudad.iconUrl}" alt="icono clima" style="width:80px; height:80px;">
+      <div class="ms-3">
+        <strong>${ciudad.name}</strong><br>
+        ${ciudad.temp}°C - ${ciudad.estado}<br>
+       💧 Humedad: ${ciudad.humedad}%<br>
+       🌬️ Viento: ${ciudad.viento} km/h
+      </div>
+    </div>
+   `;
    this.resultadoTexto.innerHTML = html;
    this.resultadoBox.classList.remove("d-none");
- }
+  }
 
 }
+

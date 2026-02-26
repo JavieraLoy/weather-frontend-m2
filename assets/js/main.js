@@ -10,7 +10,7 @@ btnBuscar.addEventListener("click", async () => {
   const ciudad = input.value.trim();
   if (!ciudad) return;
 
-  await app.cargarCiudad(ciudad);
+  await app.cargarCiudad(ciudad,true);
 });
 
 input.addEventListener("keypress", async (e) => {
