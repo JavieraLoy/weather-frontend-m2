@@ -1,5 +1,5 @@
 
-const API_KEY = "29a7f1e89596eb44b2c21cd07df4fdcc";
+const API_KEY = "";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export async function obtenerClimaActual(ciudad) {
