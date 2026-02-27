@@ -11,6 +11,7 @@ export class WeatherApp {
     this.resultadoBox = document.getElementById("weatherResult");
     this.resultadoTexto = document.getElementById("weatherText");
     this.cerrarBtn = document.getElementById("closeResult");
+    this.statusBox = document.getElementById("weatherStatus");
     
     if (this.cerrarBtn) {
         this.cerrarBtn.addEventListener("click", () => {
@@ -27,6 +28,11 @@ export class WeatherApp {
 
   async cargarCiudad(nombreCiudad, mostrarPanel=false) {
     try {
+
+      if(mostrarPanel){
+        this.mostrarCargando();
+        this.resultadoBox.classList.add("d-none");
+      }
       const climaActual = await obtenerClimaActual(nombreCiudad);
       const pronosticoApi= await obtenerPronostico(nombreCiudad);
       const pronosticoAdaptado= adaptarPronostico(pronosticoApi);
@@ -42,12 +48,14 @@ export class WeatherApp {
         this.ciudadesCargadas.add(datosProcesados.name);
       }
       if(mostrarPanel){
+        this.ocultarEstado();
         this.mostrarResultado(datosProcesados); 
       }  
 
     } catch (error) {
       console.error("Error cargando ciudad:", error.message);
-      if (this.resultadoTexto && this.resultadoBox) {
+      if(mostrarPanel){
+        this.ocultarEstado();
         this.resultadoTexto.innerHTML = "❌ Ciudad no encontrada";
         this.resultadoBox.classList.remove("d-none");
       }
@@ -72,7 +80,7 @@ export class WeatherApp {
    if (!this.resultadoTexto || !this.resultadoBox) return;
 
    const html = `
-    <div class="d-flex align-item-center gap-3">
+    <div class="d-flex align-items-center gap-3">
       <img src="${ciudad.iconUrl}" alt="icono clima" style="width:80px; height:80px;">
       <div class="ms-3">
         <strong>${ciudad.name}</strong><br>
@@ -84,6 +92,17 @@ export class WeatherApp {
    `;
    this.resultadoTexto.innerHTML = html;
    this.resultadoBox.classList.remove("d-none");
+  }
+
+  mostrarCargando() {
+    if (!this.statusBox) return;
+    this.statusBox.textContent = "⏳ Cargando datos...";
+    this.statusBox.classList.remove("d-none");
+  }
+  
+  ocultarEstado() {
+    if (!this.statusBox) return;
+    this.statusBox.classList.add("d-none");
   }
 
 }

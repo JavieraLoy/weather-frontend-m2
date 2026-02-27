@@ -1,21 +1,14 @@
-🌦️ CloudSync – Weather App
+🌦️ CloudSync – Weather App(API Version)
 
-CloudSync es una aplicación web informativa del clima que permite consultar el estado meteorológico de distintas ciudades de Chile de forma clara, visual y amigable.
-Este proyecto fue refactorizado para mejorar su escalabilidad, mantenibilidad y arquitectura frontend, incorporando:
+CloudSync es una aplicación web informativa del clima que permite consultar el estado meteorológico de distintas ciudades de Chile en tiempo real, mediante la integración con la API pública OpenWeather.
 
-• SASS con arquitectura modular (partials y main) para la organización de estilos.
+En esta actualización el poryecto evoluciona desde datos simulados(mock data) hacia consumo real de API, incorporando una arquitectura JavaScript modular basada en separación de responsabilidades(App/Services/UI).
 
-• Metodología BEM (Block, Element, Modifier) para una nomenclatura CSS consistente y escalable.
-
-• Bootstrap 5 como framework base, aprovechando su sistema de grid responsive y componentes UI.
-
-Además, se implementó lógica en JavaScript modular (ES Modules) para simular datos climáticos y generar contenido dinámico en la interfaz, aplicando variables, ciclos, condicionales y funciones para la búsqueda de ciudades, análisis estadístico del pronóstico semanal (mínimo, máximo, promedio y conteo de estados climáticos), y renderizado dinámico de tarjetas de información meteorológica en el DOM.
- 
-El proyecto está desarrollado como un MVP (Minimun Viable Product) enfocado en buenas prácticas de frontend moderno.
+El proyecto continúa utilizando SASS modular con metodología BEM y Bootstrap 5 como base visual, manteniendo un enfoque en buenas prácticas de frontend moderno.
 
 🚀 Características principales:
 
-🌍 Visualización del clima en ciudades populares de Chile
+🌍 Consulta en tiempo real del clima en ciudades populares de Chile
 🧭 Información detallada por localidad:
 - Temperatura 🌡️
 - Humedad 💧
@@ -23,12 +16,14 @@ El proyecto está desarrollado como un MVP (Minimun Viable Product) enfocado en 
 - Estado del clima (soleado, nublado, lluvioso, etc.)
 🔍 Barra de búsqueda para consultar el clima por ciudad.
 🧩 Cards dinámicas con detalles desplegables por localidad.
-🧪 Datos climáticos simulados mediante mock data (preparado para futura integración con API real).
-📊 Análisis del pronóstico semanal con:
+📊 Análisis del pronóstico semanal basado en datos reales:
    - Temperatura mínima, máxima y promedio.
    - Conteo de días soleados, nublados y lluviosos.
    - Resumen automático del clima semanal.
-⚙️ Renderizado dinámico del contenido mediante JavaScript.
+⚠️ Sistema automático de alertas climáticas.
+🏞️ Imagen personalizada por ciudad + imagen default fallback.
+⏳ Indicadores de estado (“Cargando…”)
+❌ Manejo de errores al consultar la API
 📱 Diseño responsive (mobile-first).
 🎨 Interfaz moderna con una identidad visual coherente.
 ✉️ Sección de contacto con formulario de suscripción.
@@ -38,15 +33,55 @@ El proyecto está desarrollado como un MVP (Minimun Viable Product) enfocado en 
 
 🛠️ Tecnologías utilizadas:
 
-HTML5 - Estructura semántica del proyecto.
-SASS (SCSS)- Preprocesador CSS con arquitectura modular basada en partials y main.scss.
-Metodología BEM- Convención de nomenclatura CSS para estilos escalables y mantenibles.
-Bootstrap 5 - Framework CSS utilizado para el sistema de grid responsive y componentes base.
-JavaScript (ES6) -Lógica de la aplicación, manipulación del DOM y análisis de datos climáticos simulados.
-JavaScript Modules (ES Modules) Organización modular del código JavaScript (import/export).
-jQuery - Interacciones simples con componentes Bootstrap(modal).
-Git & GitHub - Control de versiones y trabajo con ramas para refactorización progresiva.
+- HTML5 - Estructura semántica del proyecto.
+- SASS (SCSS)- Preprocesador CSS con arquitectura modular basada en partials y main.scss.
+- Metodología BEM- Convención de nomenclatura CSS para estilos escalables y mantenibles.
+- Bootstrap 5 - Framework CSS utilizado para el sistema de grid responsive y componentes base.
+- JavaScript (ES6) -Lógica de la aplicación, manipulación del DOM y análisis de datos climáticos.
+- JavaScript Modules (ES Modules) Organización modular del código JavaScript (import/export).
+- Fetch API.
+- jQuery - Interacciones simples con componentes Bootstrap(modal).
+- Git & GitHub - Control de versiones y trabajo con ramas para refactorización progresiva.
 
+🌐API utilizada
+- Se integra la API pública:
+- OpenWeather API
+- Documentación oficial: https://openweathermap.org/api
+- Base URL utilizada: https://api.openweathermap.org/data/2.5
+- Endpoints implementados:
+• /weather → Clima actual
+• /forecast → Pronóstico de 5 días
+- La información se solicita en:
+• Unidades métricas(units=metric)
+• Idioma español(lang=es)
+• País Chile(CL)
+
+🧠¿Qué clase se implemento?
+
+Se implemento como clase unica WeatherApp, la cual es el núcleo de la aplicación. Esta tiene como responsabilidad :
+ - Coordinar el flujo general.
+ - Llamar a la API.
+ - Procesar datos.
+ - Calcular estadísticas.
+ - Generar Alertas.
+ - Coontrolar estados de UI(cargando/error).
+ - Evitar renderizar ciudades duplicadas.
+Actua como controlador principal de la app.
+
+📊 ¿Cómo se calculan las estadísticas?
+
+- En esta versión las estadísticas ya no se basan en mock data.
+- El flujo es:
+   • Se consulta /forecast
+   • Se adapta la estructura de datos
+   • Se calcula:
+      - Temperatura mínima semanal
+      - Temperatura máxima semanal
+      - Promedio general
+      - Conteo de tipos de clima
+      - Resumen automático (“Semana mayormente Soleada”, etc.)
+- Todo basado en datos reales entregados por OpenWeather.
+ 
 
 📁Estructura del Proyecto:
 
@@ -66,12 +101,19 @@ MVPCLIMA/
 │   │   └── (imágenes del proyecto)
 │   │
 │   ├── js/
-|   |   ├── data/
-|   |   |   └── mockWeather.js
+|   |   ├── app/
+|   |   |   └── weatherApp.js
 |   |   |
 |   |   ├── services/
-|   |   |   └── weatherService.js
-│   │   |
+|   |   |   ├── alertsService.js
+│   │   |   ├── apiWeatherService.js
+|   |   |   ├── cityImages.js
+|   |   |   ├── statsCalculator.js
+|   |   |   └── weatherAdapter.js
+│   |   | 
+|   |   ├── ui/
+│   │   |   └── renderService.js
+|   |   |
 │   │   └── main.js
 |   |
 |   |
@@ -102,6 +144,14 @@ MVPCLIMA/
 └── README.md
 
 
+🔗 Repositorio
+
+Repositorio público:
+
+https://github.com/JavieraLoy/weather-frontend-m2
+
+(Rama actual: feature-integracion-api)
+
 ⚙️Instalación y Uso:
 
 1- Clona el Respositorio:
@@ -114,16 +164,11 @@ cd MVPCLIMA
 
 3-Cambiar a la rama de refactorización:
 
-git checkout update-proyecto-logica-js
+git checkout feature-integracion-api
 
 4-Abre el archivo index.html en tu navegador.
 
-🧠 Funcionamiento del clima:
-
-Actualmente, el proyecto utiliza datos simulados (mock data) definidos en JavaScript para representar la información climatica  de distintas ciudades.
-Se implementa lógica de análisis mediante variables, ciclos y condicionales para calcular estadísticas de pronóstico semanal (mínimo, máximo, promedio y resumen climático).
-La arquitectura está preparada para una futura integración con una API real de clima (por ejemplo OpenWeather), reemplazando los datos simulados.
 
 👩‍💻 Autor
 Desarrollado por JavieraLoy 
-Proyecto de práctica y aprendizaje en desarrollo web frontend con enfoque en arquitectura CSS moderna.
+Proyecto de práctica y aprendizaje en desarrollo web frontend moderno, enfocado en arquitectura modular, consumo de APIs y buenas prácticas de organización de código.
